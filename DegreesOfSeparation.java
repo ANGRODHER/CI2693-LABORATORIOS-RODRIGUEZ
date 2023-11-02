@@ -14,16 +14,13 @@ public class DegreesOfSeparation {
         name2 = args[1];
         String name3 = "input.txt";
 
-        // Esta función cargará los datos de un .txt solicitados de babel.java
+        // Esta función cargará los datos de un .txt solicitados
         try (BufferedReader lista = new BufferedReader(new FileReader(name3))) {
-            System.out.println("entra en el try");
-            // Se leer la primera linea verificamos que no esté vacía y que sea un entero
-            // entre 1 y 2000
+
             String linea = lista.readLine();
-            System.out.println("primera linea " + linea);
+
             while (linea != null && !linea.isEmpty()) {
 
-                // linea = lista.readLine();
                 if (linea.isEmpty()) {
                     // se lanza la excepción un mensaje a usuario
                     throw new IOException("No hay relación entre dos nombres ");
@@ -60,11 +57,11 @@ public class DegreesOfSeparation {
 
         // Obtener la lista de vértices conectados a un vértice dado
         List<vertex> connectedVertices = graph.getVerticesConnectedTo(t);
-        System.out.println("Vértices conectados: " + connectedVertices);
+        System.out.println("Vértices conectados a : " + t + connectedVertices);
 
         // Obtener la lista de vértices sucesores de un vértice dado
         List<vertex> outwardEdges = graph.getOutwardEdges(t);
-        System.out.println("Vértices sucesores: " + outwardEdges);
+        System.out.println("Vértices sucesores a: " + t + outwardEdges);
 
         // Obtener la lista de vértices predecesores de un vértice dado
         List<vertex> inwardEdges = graph.getInwardEdges(t);
